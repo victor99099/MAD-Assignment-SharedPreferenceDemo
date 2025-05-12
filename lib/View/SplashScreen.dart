@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shared_preference_mad/Controller/SettingController.dart';
+import 'package:shared_preference_mad/View/SignInScreen.dart';
 import 'package:shared_preference_mad/View/mainSettingScreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,8 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    settingsController.loadPreferences();
-    checkValuesFetched();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      settingsController.loadPreferences();
+      checkValuesFetched();
+    });
   }
 
   @override
@@ -26,8 +30,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: currentTheme.scaffoldBackgroundColor,
       body: Center(
-        child: Image.asset(
-          'assets/icon.png',
+        child: Lottie.asset(
+          "assets/Loading.json",
           width: Get.width * 0.5,
           height: Get.height * 0.5,
         ),
@@ -37,11 +41,21 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void checkValuesFetched() async {
     print("Checking status");
+    String? user_mail = await settingsController.getSavedEmail();
+    print(user_mail);
     if (settingsController.isLoading.value) {
       await Future.delayed(const Duration(milliseconds: 100));
-      checkValuesFetched(); // recall after delay
+      checkValuesFetched();
     } else {
-      Get.to(() => const SettingScreen());
+      if (user_mail == null) {
+        await Future.delayed(const Duration(milliseconds: 3000));
+
+        Get.to(() => const LogInScreen());
+      } else {
+        await Future.delayed(const Duration(milliseconds: 3000));
+
+        Get.to(() => const SettingScreen());
+      }
     }
   }
 }

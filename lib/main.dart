@@ -3,11 +3,10 @@ import 'package:get/get.dart';
 import 'Controller/SettingController.dart';
 import 'View/SplashScreen.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final settingsController = Get.put(SettingsController());
-  await settingsController.loadPreferences(); // make this public and separate
+  // await settingsController.loadPreferences(); // make this public and separate
   runApp(MyApp());
 }
 

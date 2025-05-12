@@ -3,12 +3,14 @@ import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shared_preference_mad/View/SplashScreen.dart';
 
 // import 'package:url_launcher/url_launcher_string.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../Controller/SettingController.dart';
 import '../Widgets/ColorsSelection.dart';
+import '../Widgets/SettingLogOut.dart';
 import '../Widgets/Switch.dart';
 
 // import '../Orders/OrdersScreen.dart';
@@ -125,7 +127,23 @@ class _SettingScreenState extends State<SettingScreen> {
                                     endIndent: 0,
                                     thickness: 5,
                                     height: 5),
-                                SettingHeadingColorSelection()
+                                SettingHeadingColorSelection(),
+                                Divider(
+                                    color: currentTheme.scaffoldBackgroundColor,
+                                    indent: 0,
+                                    endIndent: 0,
+                                    thickness: 5,
+                                    height: 5),
+                                SettingLogout(
+                                  headingTitle: "Logout",
+                                  headingSubtitle: "",
+                                  icon: Icons.logout,
+                                  onTap: () async {
+                                    Get.off(() => SplashScreen());
+
+                                    settingsController.clearSavedEmail();
+                                  },
+                                )
                               ],
                             ),
                           ),

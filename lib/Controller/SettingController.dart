@@ -42,9 +42,6 @@ class SettingsController extends GetxController {
     AppConstant.primary = ColorUtils.getColorFromName(primaryColorName.value);
     Get.changeTheme(isDarkMode.value ? darkTheme : lightTheme);
     isLoading.value = false;
-    print(isDarkMode.value);
-    print(notificationsEnabled.value);
-    print(primaryColorName.value);
   }
 
   Future<void> toggleDarkMode() async {
@@ -68,11 +65,25 @@ class SettingsController extends GetxController {
     Get.changeTheme(isDarkMode.value ? darkTheme : lightTheme);
   }
 
+  Future<void> saveEmail(String email) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('user_email', email);
+  }
+
+  Future<String?> getSavedEmail() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('user_email');
+  }
+
+  Future<void> clearSavedEmail() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('user_email');
+  }
+
   List<String> availableColorNames = [
     'RED',
     'BLUE',
     'GREEN',
-    'YELLOW',
     'ORANGE',
     'PURPLE',
     'PINK',
