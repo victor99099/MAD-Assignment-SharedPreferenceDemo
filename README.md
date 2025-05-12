@@ -13,9 +13,11 @@ An App with Splash and settings screen where setting preferences are saved in lo
 
 4- Replace your lib folder and pubspec.yaml file with lib folder & pubspec.yaml file given in this repo
 
-5- write "flutter pub get" in terminal
+5- Copy the assets folder from repo and paste into your root project directory
 
-6- Now write "flutter run" to run the application, Make sure your device or emulator is connected and being shown in VSCode.
+6- write "flutter pub get" in terminal
 
-## Getting Started
-Download Link : https://drive.google.com/file/d/1qHhezu7XGUv_pEerikIguTmdQtvxcRqU/view?usp=sharing
+7- Now write "flutter run" in terminal to run the application, Make sure your device or emulator is connected and being shown in VSCode.
+
+## APK Dowload Link
+Download Link : https://drive.google.com/file/d/1iIa-EENYownegoP7va3ae-PCmJu7sJXw/view?usp=sharing
