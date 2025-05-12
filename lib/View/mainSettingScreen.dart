@@ -77,7 +77,7 @@ class _SettingScreenState extends State<SettingScreen> {
                               scrollDirection: Axis.vertical,
                               shrinkWrap: true,
                               children: [
-                                "SPM Assignment Shared Preferences"
+                                "MAD Assignment Shared Preferences"
                                     .text
                                     .extraBold
                                     .xl2
