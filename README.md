@@ -21,3 +21,17 @@ An App with Splash and settings screen where setting preferences are saved in lo
 
 ## APK Dowload Link
 Download Link : https://drive.google.com/file/d/1CHIdlo1Rm6xif_utO0BVt-m0NZxl8MJx/view?usp=sharing
+
+## ScreenShots
+
+![Launcher icon](https://github.com/user-attachments/assets/cfa70194-51ce-4933-946b-5a9832e23d3e)
+
+![Splash Screen](https://github.com/user-attachments/assets/3a684c36-8e6c-45d2-a615-d7ffc512d7d7)
+
+![Login Screen](https://github.com/user-attachments/assets/841d1b84-246e-4d9b-9c10-1beb94ba125c)
+
+![Settings Dark Mode](https://github.com/user-attachments/assets/4edacd08-a6d8-4618-8f55-09e608aae477)
+
+![Settings Light Mode](https://github.com/user-attachments/assets/7712b13a-e917-4f99-9c89-3eb9db7085e5)
+
+
